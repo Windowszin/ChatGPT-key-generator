@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatGPT Key Generator</title>
+</head>
+<body>
+    <h1>ChatGPT Key Generator</h1>
+    <button id="generateKeyButton">Generate Key</button>
+    <p>Generated key: <span id="apiKey"></span></p>
+
+    <script>
+        document.getElementById("generateKeyButton").addEventListener("click", function() {
+            var apiKey = generateApiKey();
+            document.getElementById("apiKey").textContent = apiKey;
+        });
+
+        function generateApiKey() {
+            var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var apiKey = "";
+
+            for (var i = 0; i < 32; i++) {
+                apiKey += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+
+            return apiKey;
+        }
+    </script>
+</body>
+</html>
